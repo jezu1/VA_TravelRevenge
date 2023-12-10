@@ -1,0 +1,27 @@
+body {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+bottom {
+  margin-bottom: 1rem;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 9px;
+}
+
+.responsive-svg-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: 1000px;
+}

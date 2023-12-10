@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenge Travel</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+<body>
+  <h2 class="responsive-svg-container" style="text-align:center">
+    Revenge Travel - The Turtles
+  </h2>
+
+  <h3 class="responsive-svg-container" style="text-align:center">
+    How was the travelling of the European population affected by the COVID-19 pandemic?
+  </h3>
+
+  <p>
+    Revenge travel’ is a term that emerged in response to the COVID-19 pandemic. 
+    It refers to the phenomenon where people, after being restricted from travel due to lockdowns and safety concerns, 
+    enthusiastically and impulsively embark on trips to make up for lost time. This concept is related to the desire to 
+    "get back" at the pandemic for limiting our freedom and to make the most of newfound travel opportunities.
+    In the graph below it is visualized the number of nights spent in tourist accommodation establishments by residents and non-residents
+    in the European Union, per each country to explore more if the revenge travel is actually happening. The data is collected from 2019 to 2022 and is collected from Eurostat.
+  </p>
+  
+  
+  <div class="responsive-svg-container" style="text-align:center">
+    <div id="stacked_bar_chart" class="responsive-svg-container"></div>
+  </div>
+
+  <div>
+    <!-- Add filter dropdown for countries -->
+    <label for="country-filter">Select Country:</label>
+    <select id="country-filter"></select>
+    <svg id="stacked-bar-chart"></svg>
+  </div>
+
+
+  <footer class="responsive-svg-container" style="text-align:center">
+    <p style="font-size: smaller;">Created by: Ahmad & Jezuela Gega - The Turtles <br>
+      Source of the data: Eurostat -
+       <a href="https://ec.europa.eu/eurostat/databrowser/view/tin00188__custom_8820978/default/table?lang=en">see here</a></p>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
