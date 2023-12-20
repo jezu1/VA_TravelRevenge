@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Revenge Travel</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="./script.js"></script>
   <link rel="stylesheet" type="text/css" href="./style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
@@ -27,23 +29,16 @@
     in the European Union, per each country to explore more if the revenge travel is actually happening. The data is collected from 2019 to 2022 and is collected from Eurostat.
   </p>
   
-  
-  <div class="responsive-svg-container" style="text-align:center">
-    <div id="chart" class="responsive-svg-container"></div>
+  <div id="chart"></div>
+    <div>
+      <label for="Origin_Country">Select Origin Country:</label>
+      <select id="Origin_Country"></select>
+  </div>
+  <div>
+      <label for="Destination_Country">Select Destination Country:</label>
+      <select id="Destination_Country"></select>
   </div>
 
-  <div>
-    <!-- Add filter dropdown for countries -->
-    <label for="Origin_Country">Select Country:</label>
-    <select id="Origin_Country"></select>
-    <svg id="ochart"></svg>
-  </div>
-  <div>
-    <!-- Add filter dropdown for countries -->
-    <label for="Destination_Country">Select Country:</label>
-    <select id="Destination_Country"></select>
-    <svg id="dchart"></svg>
-  </div>
 
   <footer class="responsive-svg-container" style="text-align:center">
     <p style="font-size: smaller;">Created by: Ahmad & Jezuela Gega - The Turtles <br>
