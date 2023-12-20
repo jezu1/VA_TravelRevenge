@@ -1,53 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Revenge Travel</title>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="./script.js"></script>
-  <link rel="stylesheet" type="text/css" href="./style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-</head>
 <body>
-  <h2 class="responsive-svg-container" style="text-align:center">
-    Revenge Travel - The Turtles
-  </h2>
-
-  <h3 class="responsive-svg-container" style="text-align:center">
-    How was the travelling of the European population affected by the COVID-19 pandemic?
-  </h3>
-
-  <p>
-    Revenge travel’ is a term that emerged in response to the COVID-19 pandemic. 
-    It refers to the phenomenon where people, after being restricted from travel due to lockdowns and safety concerns, 
-    enthusiastically and impulsively embark on trips to make up for lost time. This concept is related to the desire to 
-    "get back" at the pandemic for limiting our freedom and to make the most of newfound travel opportunities.
-    In the graph below it is visualized the number of nights spent in tourist accommodation establishments by residents and non-residents
-    in the European Union, per each country to explore more if the revenge travel is actually happening. The data is collected from 2019 to 2022 and is collected from Eurostat.
-  </p>
-  
-  <div id="chart"></div>
-    <div>
-      <label for="Origin_Country">Select Origin Country:</label>
-      <select id="Origin_Country"></select>
+  <div class="container">
+    <!-- <div class="graph-section" id="chart"></div> -->
+    <div class="text-section">
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <img src="plane_image.jpg" alt="Plane Image" style="max-width: 100px;">
+        <h2 class="responsive-svg-container" style="text-align:center;display:inline-block; margin: 0;">
+          Revenge Travel - The Turtles
+        </h2>
+        <img src="plane_image.jpg" alt="Plane Image" style="max-width: 100px;">
+      </div>
+      <h3 class="responsive-svg-container" style="text-align:center">
+        How was the travelling of the European population affected by the COVID-19 pandemic?
+      </h3>
+      
+      <p>
+        Revenge travel’ is a term that emerged in response to the COVID-19 pandemic. 
+        It refers to the phenomenon where people, after being restricted from travel due to lockdowns and safety concerns, 
+        enthusiastically and impulsively embark on trips to make up for lost time. This concept is related to the desire to 
+        "get back" at the pandemic for limiting our freedom and to make the most of newfound travel opportunities.
+        In the graph below it is visualized the amount of money (EUR) spent by European citizens in travelling abroad.
+        The data is collected from Eurostat and it is available for the period 2019-2022.
+      </p>
+    </div>
   </div>
-  <!-- <div>
-      <label for="Destination_Country">Select Destination Country:</label>
-      <select id="Destination_Country"></select>
-  </div> -->
-
-
+  <div class="graph-section" id="chart"></div>
+  <div class="filter-section">
+    <label for="Origin_Country">Select Origin Country:</label>
+    <select id="Origin_Country"></select>
+    
+    <p>
+      By selecting the country of origin, the graph will show the amount of money spent by the citizens of the selected country in travelling abroad in in 2019 compared to 2022. Illustrating this way if the travelling habits of the citizens of the selected country have changed due to the COVID-19 pandemic.
+    </p>
+  </div>
+  
   <footer class="responsive-svg-container" style="text-align:center">
     <p style="font-size: smaller;">Created by: Ahmad & Jezuela Gega - The Turtles <br>
       Source of the data: Eurostat -
-       <a href="https://ec.europa.eu/eurostat/databrowser/view/tin00188__custom_8820978/default/table?lang=en">see here</a></p>
-
+       <a href="https://ec.europa.eu/eurostat/databrowser/view/tin00188__custom_8820978/default/table?lang=en">see here</a>
+    </p>
   </footer>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <script src="./script.js"></script>
 </body>
-</html>

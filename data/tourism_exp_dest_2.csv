@@ -1,0 +1,156 @@
+Year,Origin_Country_Code,Origin_Country,Destination_Country_Code,Destination_Country,Purpose,Duration,Expenditure_Type,Total_Expenditure_EUR,Avg_Exp_per_Trip_EUR,Avg_Exp_per_Night_EUR
+2019,CH,Switzerland,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,150746283.0,515.43,235.45
+2019,CZ,Czechia,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,57089936.0,201.97,86.65
+2022,CZ,Czechia,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,52424965.0,251.23,99.39
+2019,DE,Germany,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,1129304425.0,337.69,139.85
+2022,DE,Germany,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,1442021716.0,416.05,179.45
+2019,ES,Spain,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,42021062.0,469.83,177.13
+2019,FR,France,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,30442925.0,421.34,153.65
+2019,HR,Croatia,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,22772099.0,229.81,123.1
+2022,HR,Croatia,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,13759419.0,238.45,120.97
+2019,HU,Hungary,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,63993987.0,132.91,69.0
+2022,HU,Hungary,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,77666452.0,152.69,68.19
+2019,IT,Italy,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,111546656.0,311.8,166.05
+2022,IT,Italy,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,120132585.0,424.48,178.39
+2019,LU,Luxembourg,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,12916301.0,750.74,277.21
+2022,LU,Luxembourg,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,10362930.0,739.84,301.83
+2019,NL,Netherlands,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,54802767.0,524.38,188.45
+2022,NL,Netherlands,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,35642272.0,350.66,132.1
+2019,PL,Poland,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,19634440.0,368.63,138.49
+2022,PL,Poland,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,17268308.0,246.57,94.15
+2019,RO,Romania,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,13886650.0,382.73,137.64
+2019,SI,Slovenia,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,15687222.0,137.48,74.43
+2022,SI,Slovenia,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,18056512.0,296.82,144.2
+2019,SK,Slovakia,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,42975271.0,235.93,103.28
+2022,SK,Slovakia,AT,Austria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,31226049.0,329.26,141.64
+2019,AL,Albania,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,2447666.0,128.07,32.9
+2019,BE,Belgium,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,274671134.0,776.87,120.16
+2022,BE,Belgium,AT,Austria,Personal reasons,1 night or over,Package arrangement,54824383.0,165.89,24.39
+2019,CY,Cyprus,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,26385470.0,988.55,203.11
+2019,DK,Denmark,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,272512071.0,1158.98,175.38
+2019,EL,Greece,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,23634661.0,621.12,96.67
+2022,EL,Greece,AT,Austria,Personal reasons,1 night or over,Package arrangement,7214135.0,572.14,100.74
+2022,ES,Spain,AT,Austria,Personal reasons,1 night or over,Package arrangement,25604983.0,153.76,20.76
+2019,FI,Finland,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,92610928.0,1046.08,181.66
+2022,FR,France,AT,Austria,Personal reasons,1 night or over,Package arrangement,80240462.0,264.94,38.13
+2019,IE,Ireland,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,75538140.0,1119.67,188.5
+2019,LT,Lithuania,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,10226500.0,784.59,144.49
+2022,LT,Lithuania,AT,Austria,Personal reasons,1 night or over,Package arrangement,3186260.0,202.31,25.28
+2019,MT,Malta,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,14423539.0,943.12,175.3
+2022,MT,Malta,AT,Austria,Personal reasons,1 night or over,Package arrangement,1579547.0,146.05,27.88
+2019,PT,Portugal,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,13685923.0,811.47,156.05
+2022,PT,Portugal,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,11731564.0,721.83,123.23
+2022,RO,Romania,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,70289475.0,751.98,117.28
+2019,SE,Sweden,AT,Austria,Personal reasons,1 night or over,Total excluding durable/valuable goods,279206399.0,1557.89,214.89
+2019,DE,Germany,AT,Austria,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,324947443.0,412.35,225.85
+2019,HU,Hungary,AT,Austria,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,3807624.0,244.09,115.54
+2022,HU,Hungary,AT,Austria,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,8374362.0,239.49,110.43
+2019,LT,Lithuania,AT,Austria,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,2816749.0,340.66,113.55
+2022,PL,Poland,AT,Austria,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,8594687.0,360.81,138.52
+2022,DE,Germany,AT,Austria,"Professional, business",1 night or over,Total excluding durable/valuable goods,512518032.0,685.97,216.53
+2019,HR,Croatia,AT,Austria,"Professional, business",1 night or over,Total excluding durable/valuable goods,14336612.0,378.78,105.91
+2022,LT,Lithuania,AT,Austria,"Professional, business",1 night or over,Total excluding durable/valuable goods,3279602.0,549.83,113.41
+2022,NL,Netherlands,AT,Austria,"Professional, business",1 night or over,Total excluding durable/valuable goods,33882060.0,1018.34,268.28
+2019,PL,Poland,AT,Austria,"Professional, business",1 night or over,Total excluding durable/valuable goods,18911722.0,496.7,91.77
+2019,SI,Slovenia,AT,Austria,"Professional, business",1 night or over,Total excluding durable/valuable goods,11968446.0,346.41,184.47
+2022,SI,Slovenia,AT,Austria,"Professional, business",1 night or over,Total excluding durable/valuable goods,9593955.0,292.52,75.86
+2019,BE,Belgium,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,30627342.0,583.16,243.18
+2022,BE,Belgium,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,23723383.0,472.02,192.0
+2019,CH,Switzerland,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,198320947.0,548.36,261.27
+2019,CZ,Czechia,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,66436802.0,206.72,89.32
+2022,CZ,Czechia,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,52993163.0,250.39,99.34
+2019,DE,Germany,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,1454251868.0,351.93,152.85
+2022,DE,Germany,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,1813898519.0,449.21,198.48
+2019,ES,Spain,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,50932946.0,502.77,197.98
+2019,FR,France,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,57389018.0,553.04,201.15
+2019,HR,Croatia,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,32747574.0,255.37,144.0
+2022,HR,Croatia,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,18613476.0,268.7,133.62
+2019,HU,Hungary,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,67801611.0,136.4,70.59
+2022,HU,Hungary,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,86040814.0,158.27,70.83
+2019,IT,Italy,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,127873753.0,330.53,176.57
+2022,IT,Italy,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,122574896.0,419.58,176.31
+2019,LT,Lithuania,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,4144164.0,333.77,125.99
+2019,LU,Luxembourg,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,15173727.0,754.68,280.24
+2022,LU,Luxembourg,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,12105866.0,764.36,322.1
+2019,NL,Netherlands,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,75424557.0,616.7,230.59
+2022,NL,Netherlands,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,54802689.0,430.99,167.74
+2019,PL,Poland,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,28572532.0,390.03,154.67
+2022,PL,Poland,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,25862995.0,275.57,105.36
+2019,RO,Romania,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,13886650.0,382.73,137.64
+2019,SI,Slovenia,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,25471969.0,175.6,98.38
+2022,SI,Slovenia,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,22017231.0,304.99,150.22
+2019,SK,Slovakia,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,53398125.0,217.16,107.23
+2022,SK,Slovakia,AT,Austria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,32982432.0,316.65,136.83
+2019,AL,Albania,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,3137622.0,126.33,26.5
+2019,CY,Cyprus,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,36415016.0,1088.49,225.14
+2019,DK,Denmark,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,290768510.0,1151.12,180.59
+2019,EL,Greece,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,26094492.0,595.69,98.88
+2022,EL,Greece,AT,Austria,Total,1 night or over,Package arrangement,7214135.0,572.14,100.74
+2022,ES,Spain,AT,Austria,Total,1 night or over,Package arrangement,25604983.0,139.57,19.56
+2019,FI,Finland,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,148864880.0,1029.36,178.53
+2022,FR,France,AT,Austria,Total,1 night or over,Package arrangement,80240462.0,247.77,36.66
+2019,IE,Ireland,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,78789497.0,1115.52,192.65
+2022,LT,Lithuania,AT,Austria,Total,1 night or over,Package arrangement,3186260.0,146.74,20.56
+2019,MT,Malta,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,14687911.0,930.12,175.58
+2022,MT,Malta,AT,Austria,Total,1 night or over,Package arrangement,1579547.0,146.05,27.88
+2019,PT,Portugal,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,17215444.0,694.28,136.71
+2022,PT,Portugal,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,12482353.0,694.32,127.78
+2022,RO,Romania,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,71180503.0,753.97,116.05
+2019,SE,Sweden,AT,Austria,Total,1 night or over,Total excluding durable/valuable goods,345006657.0,1462.82,230.35
+2022,AT,Austria,BE,Belgium,Personal reasons,1 night or over,Total excluding durable/valuable goods,37060558.0,633.87,133.33
+2022,IE,Ireland,BE,Belgium,Personal reasons,1 night or over,Total excluding durable/valuable goods,53962777.0,711.49,116.85
+2019,ES,Spain,BE,Belgium,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,70932077.0,701.31,411.36
+2019,FR,France,BE,Belgium,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,81688443.0,352.16,221.68
+2022,FR,France,BE,Belgium,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,123522541.0,413.01,279.53
+2019,LU,Luxembourg,BE,Belgium,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,19940294.0,365.09,234.48
+2022,LU,Luxembourg,BE,Belgium,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,16163890.0,553.76,377.94
+2019,MT,Malta,BE,Belgium,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,6543246.0,592.74,326.5
+2019,NL,Netherlands,BE,Belgium,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,161393138.0,312.56,253.67
+2019,PT,Portugal,BE,Belgium,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,7549144.0,375.58,209.08
+2019,IE,Ireland,BE,Belgium,"Professional, business",1 night or over,Total excluding durable/valuable goods,25786127.0,762.8,273.73
+2022,AT,Austria,BE,Belgium,Total,From 1 to 3 nights,Total excluding durable/valuable goods,23450773.0,676.49,352.22
+2019,AT,Austria,BE,Belgium,Total,1 night or over,Total excluding durable/valuable goods,55816742.0,835.96,198.86
+2022,IE,Ireland,BE,Belgium,Total,1 night or over,Total excluding durable/valuable goods,68661008.0,754.54,131.43
+2019,MK,North Macedonia,BG,Bulgaria,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,3029097.0,139.02,52.72
+2019,EE,Estonia,BG,Bulgaria,Personal reasons,1 night or over,Total excluding durable/valuable goods,26248408.0,1296.84,152.77
+2019,MK,North Macedonia,BG,Bulgaria,Total,From 1 to 3 nights,Total excluding durable/valuable goods,3040963.0,138.99,52.67
+2019,EE,Estonia,BG,Bulgaria,Total,1 night or over,Total excluding durable/valuable goods,27212035.0,1268.94,154.06
+2019,AT,Austria,CH,Switzerland,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,32712256.0,422.32,169.81
+2022,AT,Austria,CH,Switzerland,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,34364179.0,701.34,327.28
+2019,BE,Belgium,CH,Switzerland,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,19131144.0,679.96,357.71
+2022,LV,Latvia,CZ,Czechia,Personal reasons,1 night or over,Package arrangement,3271624.0,146.4,25.42
+2022,LV,Latvia,CZ,Czechia,Total,1 night or over,Package arrangement,3271624.0,134.43,21.13
+2019,BG,Bulgaria,DE,Germany,Personal reasons,1 night or over,Total excluding durable/valuable goods,20680267.0,403.76,31.27
+2022,BG,Bulgaria,DE,Germany,Personal reasons,1 night or over,Total excluding durable/valuable goods,19180007.0,581.49,43.2
+2022,EE,Estonia,DE,Germany,Personal reasons,1 night or over,Total excluding durable/valuable goods,40457024.0,1267.81,229.38
+2022,FI,Finland,DE,Germany,Personal reasons,1 night or over,Total excluding durable/valuable goods,198779103.0,953.31,87.68
+2019,LV,Latvia,DE,Germany,Personal reasons,1 night or over,Total excluding durable/valuable goods,30038581.0,475.3,65.7
+2022,SE,Sweden,DE,Germany,Personal reasons,1 night or over,Total excluding durable/valuable goods,639393698.0,852.41,166.17
+2019,AT,Austria,DE,Germany,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,432139902.0,622.07,344.05
+2022,BE,Belgium,DE,Germany,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,27419244.0,327.76,191.27
+2019,CH,Switzerland,DE,Germany,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,223157387.0,962.22,560.94
+2019,CZ,Czechia,DE,Germany,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,24636488.0,264.74,146.95
+2019,DK,Denmark,DE,Germany,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,139235052.0,749.21,451.14
+2019,EE,Estonia,DE,Germany,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,22879208.0,923.11,411.46
+2022,ES,Spain,DE,Germany,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,58216416.0,775.13,349.74
+2022,PT,Portugal,DE,Germany,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,8151474.0,425.07,181.75
+2019,SE,Sweden,DE,Germany,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,253727218.0,911.27,386.84
+2019,CY,Cyprus,DE,Germany,"Professional, business",1 night or over,Total excluding durable/valuable goods,32426956.0,1352.54,340.08
+2019,EL,Greece,DE,Germany,"Professional, business",1 night or over,Total excluding durable/valuable goods,19211099.0,841.36,143.62
+2019,FI,Finland,DE,Germany,"Professional, business",1 night or over,Total excluding durable/valuable goods,342534769.0,1282.81,271.48
+2022,FI,Finland,DE,Germany,"Professional, business",1 night or over,Total excluding durable/valuable goods,162467332.0,2020.51,216.54
+2022,HR,Croatia,DE,Germany,"Professional, business",1 night or over,Total excluding durable/valuable goods,27757604.0,1106.66,102.13
+2022,SE,Sweden,DE,Germany,Total,From 1 to 3 nights,Total excluding durable/valuable goods,337654282.0,721.94,363.94
+2019,BG,Bulgaria,DE,Germany,Total,1 night or over,Total excluding durable/valuable goods,37578989.0,493.92,48.57
+2022,BG,Bulgaria,DE,Germany,Total,1 night or over,Total excluding durable/valuable goods,34548047.0,589.07,63.75
+2022,EE,Estonia,DE,Germany,Total,1 night or over,Total excluding durable/valuable goods,61278507.0,1265.62,255.46
+2022,FI,Finland,DE,Germany,Total,1 night or over,Total excluding durable/valuable goods,361246435.0,1250.31,119.73
+2019,LV,Latvia,DE,Germany,Total,1 night or over,Total excluding durable/valuable goods,56370895.0,576.29,69.77
+2022,CY,Cyprus,EL,Greece,Personal reasons,From 1 to 3 nights,Total excluding durable/valuable goods,79924728.0,569.01,222.19
+2019,AL,Albania,EL,Greece,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,1282913.0,144.18,58.82
+2022,CY,Cyprus,EL,Greece,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,11128443.0,635.87,307.87
+2022,CY,Cyprus,EL,Greece,Total,From 1 to 3 nights,Total excluding durable/valuable goods,91053171.0,576.41,230.01
+2022,EE,Estonia,FI,Finland,"Professional, business",1 night or over,Total excluding durable/valuable goods,13204912.0,606.29,112.71
+2022,MT,Malta,IT,Italy,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,5377965.0,630.15,272.71
+2022,SE,Sweden,IT,Italy,"Professional, business",1 night or over,Total excluding durable/valuable goods,452032187.0,796.24,138.28
+2022,IE,Ireland,UK,United Kingdom,"Professional, business",From 1 to 3 nights,Total excluding durable/valuable goods,98599320.0,516.91,331.19
