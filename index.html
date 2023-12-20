@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Revenge Travel</title>
   <link rel="stylesheet" type="text/css" href="./style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -30,16 +29,21 @@
   
   
   <div class="responsive-svg-container" style="text-align:center">
-    <div id="stacked_bar_chart" class="responsive-svg-container"></div>
+    <div id="chart" class="responsive-svg-container"></div>
   </div>
 
   <div>
     <!-- Add filter dropdown for countries -->
-    <label for="country-filter">Select Country:</label>
-    <select id="country-filter"></select>
-    <svg id="stacked-bar-chart"></svg>
+    <label for="Origin_Country">Select Country:</label>
+    <select id="Origin_Country"></select>
+    <svg id="ochart"></svg>
   </div>
-
+  <div>
+    <!-- Add filter dropdown for countries -->
+    <label for="Destination_Country">Select Country:</label>
+    <select id="Destination_Country"></select>
+    <svg id="dchart"></svg>
+  </div>
 
   <footer class="responsive-svg-container" style="text-align:center">
     <p style="font-size: smaller;">Created by: Ahmad & Jezuela Gega - The Turtles <br>
