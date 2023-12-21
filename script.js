@@ -27,13 +27,13 @@ d3.csv("./data/tourism_exp_dest_1.csv").then(data => {
         Destination_Countries: Array.from(destinationValues, ([Destination_Country, values]) => {
             return {
                 Destination_Country: Destination_Country,
-                Expenditure2019: d3.sum(values.filter(d => d.Year === 2019), d => d.Total_Expenditure_EUR),
-                Expenditure2022: d3.sum(values.filter(d => d.Year === 2022), d => d.Total_Expenditure_EUR)
+                Expenditure2019: d3.sum(values.filter(d => d.Year === 2019), d => d.Avg_Exp_per_Trip_EUR),
+                Expenditure2022: d3.sum(values.filter(d => d.Year === 2022), d => d.Avg_Exp_per_Trip_EUR)
             };
         })
     }));
     // Log the combined data
-    console.log("Combined data:", combinedData);
+    console.log("Combined data to check:", combinedData);
 
     // Function to create the Cleveland dot plot
     function createChart(selectedCountry) {
@@ -63,7 +63,7 @@ d3.csv("./data/tourism_exp_dest_1.csv").then(data => {
     
         // X axis scale
         const xScale = d3.scaleLinear()
-            .domain([0, d3.max(selectedData, d => Math.max(d.Expenditure2019, d.Expenditure2022))]) // Divide by 1e9 to convert to billions
+            .domain([0, d3.max(selectedData, d => Math.max(d.Expenditure2019, d.Expenditure2022))]) 
             .range([0, width]);
     
         // Draw lines
@@ -78,10 +78,10 @@ d3.csv("./data/tourism_exp_dest_1.csv").then(data => {
             .attr("y2", d => yScale(d.Destination_Country) + yScale.bandwidth() / 2)
             .attr("stroke", "grey")
             .attr("stroke-width", 1);
-    
+
         // Draw dots for 2019
         svg.selectAll(".dot2019")
-            .data(selectedData)
+            .data(selectedData.filter(d => d.Expenditure2019 > 0))
             .enter()
             .append("circle")
             .attr("class", "dot2019")
@@ -89,10 +89,10 @@ d3.csv("./data/tourism_exp_dest_1.csv").then(data => {
             .attr("cy", d => yScale(d.Destination_Country) + yScale.bandwidth() / 2)
             .attr("r", 5)
             .style("fill", "#69b3a2");
-    
+
         // Draw dots for 2022
         svg.selectAll(".dot2022")
-            .data(selectedData)
+            .data(selectedData.filter(d => d.Expenditure2022 > 0))
             .enter()
             .append("circle")
             .attr("class", "dot2022")
@@ -100,10 +100,10 @@ d3.csv("./data/tourism_exp_dest_1.csv").then(data => {
             .attr("cy", d => yScale(d.Destination_Country) + yScale.bandwidth() / 2)
             .attr("r", 5)
             .style("fill", "#4C4082");
-    
+
     
         // Draw x-axis with ticks in billions
-        const xAxis = d3.axisBottom(xScale).tickFormat(d => `${d / 1e9}B`);
+        const xAxis = d3.axisBottom(xScale)//.tickFormat(d => `${d / 1e9}B`);
 
         // Draw x axis with label
         svg.append("g")
@@ -391,17 +391,21 @@ d3.csv("./data/tourism_data_agg.csv").then(function (data) {
   
     // Create legend
     var legend = d3.select("#legend")
-      .selectAll(".legend-item")
-      .data(color.domain())
-      .enter().append("div")
-      .attr("class", "legend-item");
-  
+        .selectAll(".legend-item")
+        .data(color.domain())
+        .enter().append("div")
+        .attr("class", "legend-item")
+        .style("display", "flex")
+        .style("align-items", "center");
+
     legend.append("div")
-      .attr("class", "legend-color")
-      .style("background-color", color);
-  
+        .attr("class", "legend-color")
+        .style("background-color", color);
+
     legend.append("div")
-      .text(function (d) { return d; });
+        .text(function (d) { return d.replace(/_/g, " ") + " " })
+        .append("span")
+        .text(" ");
   
   var y2 = d3.scaleLinear().domain([0, d3.max(data, function (d) { return +d.Avg_Exp_per_Trip_EUR; })]).range([height, 0]);
   
@@ -508,4 +512,6 @@ d3.csv("./data/tourism_data_agg.csv").then(function (data) {
   
   covidLegend.append("div")
     .text("Covid Period");
+
+
   });
