@@ -4,16 +4,60 @@ html, body {
 }
 
 h2 {
-  font-family: Arial, sans-serif;
-  font-size: 5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  color: tomato;
+}
+
+h3 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+  font-size: 1.5rem;
   font-weight: 800;
   margin: 0;
 }
 
+p {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+  text-align: center;
+}
+
 footer {
   margin-bottom: 1rem;
-  font-family: Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
   font-size: 9px;
+}
+
+.first_chart {
+  margin-left: 12%;
+  float: left;
+}
+
+.sk_chart {
+  float: left;
+  margin-right: 20px;
+}
+
+.link {
+  fill: none;
+  stroke: lightblue;
+  opacity: 0.5;
+}
+
+.highlighted-link {
+  stroke: red;
+  stroke-opacity: 1;
+}
+
+.node {
+  cursor: move;
+  fill: #ccc;
+  shape-rendering: crispEdges;
+}
+
+.node-label, .source-label {
+  font-size: 10px;
 }
 
 .responsive-svg-container {
@@ -32,11 +76,17 @@ footer {
 
 .graph-section {
   flex: 1; /* Occupy 50% of the container */
-  padding-top: 30px; /* Add padding to the top */
+  padding-top: 0px; /* Add padding to the top */
   width: 50%;
   text-align: center;
+  margin-left: 20%;
+  margin-top: 0;
+}
 
-
+.filter-section {
+  margin-left: 25%;;
+  margin-top: 0px;
+  margin-bottom: 30px;
 }
 
 .text-section {
@@ -53,4 +103,32 @@ footer {
   max-width: 100px; /* Adjust the image size as needed */
   height: auto;
   align-self: flex-end; /* Align the image to the right */
+}
+
+.legend {
+  float: right;
+  flex-direction: column;
+  top: 20px;
+  right: 20px;
+  font-family: 'Trebuchet MS', sans-serif;
+  margin-right: 15%;
+  margin-top: 40px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.dashed_line {
+fill: none;
+stroke-width: 5;
+stroke-dasharray: 15, 5;
 }

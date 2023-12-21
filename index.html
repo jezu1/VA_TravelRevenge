@@ -1,18 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenge Travel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3"></script>
+    <script src="./script.js"></script>
+</head>
 <body>
   <div class="container">
-    <!-- <div class="graph-section" id="chart"></div> -->
     <div class="text-section">
       <div style="display: flex; align-items: center; justify-content: center;">
         <img src="plane_image.jpg" alt="Plane Image" style="max-width: 100px;">
         <h2 class="responsive-svg-container" style="text-align:center;display:inline-block; margin: 0;">
-          Revenge Travel - The Turtles
+          Is revenge travel a thing?
         </h2>
         <img src="plane_image.jpg" alt="Plane Image" style="max-width: 100px;">
       </div>
       <h3 class="responsive-svg-container" style="text-align:center">
-        How was the travelling of the European population affected by the COVID-19 pandemic?
+        How has the Covid-19 pandemic affected tourism for EU residents?
       </h3>
-      
       <p>
         Revenge travel’ is a term that emerged in response to the COVID-19 pandemic. 
         It refers to the phenomenon where people, after being restricted from travel due to lockdowns and safety concerns, 
@@ -23,23 +33,46 @@
       </p>
     </div>
   </div>
-  <div class="graph-section" id="chart"></div>
-  <div class="filter-section">
-    <label for="Origin_Country">Select Origin Country:</label>
+  <h3 style="text-align:center; margin-top: 20px; font-size: 25px;">
+    Tourism recovery activity compared with Average Expenses incurred from EU residents
+  </h3>
+  <div class="first_chart" id="overall_chart"></div>
+	<div class="legend" id="legend"></div>
+  <h3 style="text-align:center; margin-bottom: 30px; font-size: 35px; clear: both;">
+    Trips by source and destination
+  </h3>
+  <h3 style="text-align:center;float:left; margin-left: 15%;">
+    Tourism destination 2019
+  </h3>
+  <h3 style="text-align:center;float: right; margin-right: 15%;">
+    Tourism destination 2022
+  </h3>
+  <div class="sk_chart" id="sankey" style="float: left;"></div>
+  <h3 style="text-align:center; margin-top: 850px; font-size: 35px; clear: both;margin-bottom: 0px;">
+    Average expense per trip by source and destination
+  </h3>
+  <div class="graph-section" id="chart" style="margin-top: 0; padding-top: 0;"></div>
+  <div class="filter-section" style="text-align:left">
+    <label for="Origin_Country"><b style="font-family: 'Trebuchet MS', sans-serif;">Select Origin Country:</b></label>
     <select id="Origin_Country"></select>
     
-    <p>
-      By selecting the country of origin, the graph will show the amount of money spent by the citizens of the selected country in travelling abroad in in 2019 compared to 2022. Illustrating this way if the travelling habits of the citizens of the selected country have changed due to the COVID-19 pandemic.
+    <p style="text-align:left; margin-bottom: 0;">
+      By selecting the country of origin, the graph will show the amount of money spent by the citizens
+    </p>
+    <p style="text-align:left; margin-bottom: 0;">
+      of the selected country in travelling abroad in in 2019 compared to 2022. Illustrating this way if the.
+    </p>
+    <p style="text-align:left; margin-bottom: 0;">
+      travelling habits of the citizens of the selected country have changed due to the COVID-19 pandemic.
     </p>
   </div>
   
   <footer class="responsive-svg-container" style="text-align:center">
-    <p style="font-size: smaller;">Created by: Ahmad & Jezuela Gega - The Turtles <br>
+    <p style="font-size: small; margin-bottom: 20px;">Created by: Ahmad & Jezuela Gega - The Turtles <br>
       Source of the data: Eurostat -
        <a href="https://ec.europa.eu/eurostat/databrowser/view/tin00188__custom_8820978/default/table?lang=en">see here</a>
     </p>
+    <br />
   </footer>
-  
-  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-  <script src="./script.js"></script>
 </body>
+</html>
