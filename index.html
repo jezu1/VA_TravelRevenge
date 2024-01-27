@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revenge Travel</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3"></script>
-    <script src="./script.js"></script>
 </head>
 <body>
   <div class="container">
     <div class="text-section">
       <div style="display: flex; align-items: center; justify-content: center;">
-        <img src="plane_image.jpg" alt="Plane Image" style="max-width: 100px;">
+        <img src="plane_image.jpg" alt="Plane Image" style="max-width: 70px;">
         <h2 class="responsive-svg-container" style="text-align:center;display:inline-block; margin: 0;">
           Travel Revenge?
         </h2>
-        <img src="plane_image.jpg" alt="Plane Image" style="max-width: 100px;">
+        <img src="plane_image.jpg" alt="Plane Image" style="max-width: 70px;">
       </div>
-      <h3 class="responsive-svg-container" style="text-align:center">
+      <!-- <h3 class="responsive-svg-container" style="text-align:center">
         How has the Covid-19 pandemic affected travelling in Europe.
       </h3>
       <p>
@@ -31,48 +28,12 @@
         "get back" at the pandemic for limiting our freedom and to make the most of newfound travel opportunities.
         In the graph below it is visualized the amount of money (EUR) spent by European citizens in travelling abroad.
         The data is collected from Eurostat and it is available for the period 2019-2022.
-      </p>
+      </p> -->
     </div>
   </div>
-  <h3 style="text-align:center; margin-top: 20px; font-size: 25px;">
-    Tourism recovery activity compared with Average Expenses incurred from EU residents
-  </h3>
-  <div class="first_chart" id="overall_chart">
-    <div class="legend" id="legend" style="float: right; display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-start;"></div>
-  </div>
-  <h3 style="text-align:center; margin-bottom: 30px; font-size: 35px; clear: both;">
-    <img src="./Destination.jpg" style="vertical-align: middle; max-width: 30px; margin-right: 10px;">
-    Trips by source and destination
-  </h3>
 
-  <h3 style="text-align:center;float:left; margin-left: 15%;">
-    Tourism destination 2019
-  </h3>
-  <h3 style="text-align:center;float: right; margin-right: 15%;">
-    Tourism destination 2022
-  </h3>
-  <div class="sk_chart" id="sankey" style="float: left;"></div>
-  <h3 style="text-align:center; margin-top: 850px; font-size: 35px; clear: both;margin-bottom: 0px;">
-    <img src="money.png" alt="Destination Icon" style="vertical-align: middle; max-width: 30px; margin-right: 10px;">
-    Average expense per trip by source and destination
-  </h3>
-  <div class="graph-section" id="chart" style="margin-top: 0; padding-top: 0;"></div>
-  <div class="filter-section" style="text-align:left">
-    <img src="./Destination.jpg" style="vertical-align: middle; max-width: 30px; margin-right: 10px;">
-    <label for="Origin_Country"><b style="font-family: 'Trebuchet MS', sans-serif;">Select Origin Country:</b></label>
-    <select id="Origin_Country"></select>
-    
-    <p style="text-align:left; margin-bottom: 0;">
-      By selecting the country of origin, the graph will show the amount of money spent by the citizens
-    </p>
-    <p style="text-align:left; margin-bottom: 0;">
-      of the selected country in travelling abroad in in 2019 compared to 2022. Illustrating this way if the.
-    </p>
-    <p style="text-align:left; margin-bottom: 0;">
-      travelling habits of the citizens of the selected country have changed due to the COVID-19 pandemic.
-    </p>
-  </div>
-  
+  <div id="covid-timeline" class="responsive-svg-container" style="text-align:center"></div>
+
   <footer class="responsive-svg-container" style="text-align:center">
     <img src="footer.jpg" alt="Footer Image" style="max-width: 100%; height: auto; width: 30%;">
     <p style="font-size: small; margin-bottom: 20px;">Created by: Ahmad & Jezuela Gega - The Turtles <br>
@@ -81,5 +42,7 @@
     </p>
     <br />
   </footer>
+  <!-- <script src="./script.js"></script> -->
+  <script src="./script.js"></script>
 </body>
 </html>
