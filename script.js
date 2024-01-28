@@ -108,130 +108,211 @@ function createTimelineGraph() {
 
 
 
+// function createForceDirectedGraph() {
+//   // Step 1: Load Data
+//   const jsonFile = './data/dest_trips_exp.json';
+
+//   d3.json(jsonFile).then(data => {
+//   // Once the data is loaded, you can access your nodes and links
+//   const nodes = data.nodes;
+//   const links = data.links;
+
+//   // Convert links into a map for easy lookup
+//   const visitorMap = {};
+//   links.forEach(link => {
+//     if (!visitorMap[link.source]) {
+//       visitorMap[link.source] = {};
+//     }
+//     visitorMap[link.source][link.target] = link.value;
+//   });
+//   // Step 2: Identify top 10 visited countries for 2022
+//   const topCountries2022 = nodes
+//     .filter(d => d.year === 2022)
+//     .sort((a, b) => d3.descending(visitorMap[a.id][a.id], visitorMap[b.id][b.id]))
+//     .slice(0, 10)
+//     .map(d => d.country);
+
+//   // Step 3: Filter nodes for all years, but only for top countries
+//   const filteredNodes = nodes
+//     .filter(d => topCountries2022.includes(d.country))
+//     .sort((a, b) => {
+//       // Sort by year descending, then by visitors within the year
+//       const yearDiff = d3.descending(a.year, b.year);
+//       if (yearDiff !== 0) return yearDiff;
+//       return d3.descending(visitorMap[a.id][a.id], visitorMap[b.id][b.id]);
+//     });
+
+//   // Step 3: Setup D3 Environment
+//   const width = 800;
+//   const height = 1000;
+//   const svg = d3.select("#preferd-destionations")
+//           .append("svg")
+//           .attr("width", width).attr("height", height);
+
+//   const yearsToShow = [2018, 2020, 2022];
+//   const radiusStep = Math.min(width, height) / (yearsToShow.length*3);
+  
+//   // Create a scale for your rings
+//   const yearScale = d3.scaleOrdinal()
+//   .domain(yearsToShow)
+//   .range([radiusStep, radiusStep * 2, radiusStep * 3]);
+//     //existing code
+//   const sizeScale = d3.scaleSqrt().domain([0, d3.max(nodes, d => d3.max(Object.values(visitorMap[d.id])))])
+//                   .range([5, 40]);
+//   const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+
+//   // Step 4: Render Circles
+//   yearsToShow.forEach((year, i) => {
+//     // Draw the circle
+//     svg.append("circle")
+//       .attr("cx", width / 2)
+//       .attr("cy", height / 2)
+//       .attr("r", yearScale(year))
+//       .style("fill", "none")
+//       .style("stroke", "lightgrey"); // Change the color as needed
+  
+//     // Add year label
+//     svg.append("text")
+//       .attr("x", width / 2 + yearScale(year))
+//       .attr("y", height / 2)
+//       .attr("dy", "0.35em") // To vertically align text
+//       .attr("text-anchor", "middle") // Center the text
+//       .style("fill", "black") // Text color
+//       .style("font-size", "10px") // Text size
+//       .text(year);
+//   });
+//   const circles = svg.selectAll("circle")
+//     .data(filteredNodes)
+//     .enter().append("circle") //check this
+//     .attr("class", "country-node")
+//     .attr("r", d => sizeScale(d3.max(Object.values(visitorMap[d.id]))))
+//     .attr("fill", d => colorScale(d.country))
+//     // .call(d3.drag().on("start", dragstarted).on("drag", dragged).on("end", dragended));
+  
+//   circles.attr("cx", (d, i) => width / 2 + Math.cos(getAngle(d, i, filteredNodes)) * yearScale(d.year))
+//     .attr("cy", (d, i) => height / 2 + Math.sin(getAngle(d, i, filteredNodes)) * yearScale(d.year));
+  
+//   // Function to get the angle for positioning nodes
+//   function getAngle(d, index, nodes) {
+//     // Spread nodes evenly on the circle
+//     // const sparseFactor = 2
+//     const angle = (index / topCountries2022.length) * Math.PI * 2;
+//     // const angle = ((index * sparseFactor) % nodes.length) * (Math.PI * 2 / nodes.length);
+//     return angle;
+//   }
+//   // Step 5: Render Labels
+//   const labels = svg.selectAll("text")
+//     .data(filteredNodes)
+//     .enter().append("text")
+//     .text(d => d.country)
+//     .attr("fill", "black")
+//     .attr("font-size", "10px")
+//     .attr("text-anchor", "middle")
+//     .attr("alignment-baseline", "middle")
+//     .attr("x", (d, i) => width / 2 + Math.cos(getAngle(d, i, filteredNodes)) * yearScale(d.year))
+//     .attr("y", (d, i) => height / 2 + Math.sin(getAngle(d, i, filteredNodes)) * yearScale(d.year));
+
+//   });
+// }
+
 function createForceDirectedGraph() {
-  // Set the dimensions for the visualization
-  const width = 960;
-  const height = 600;
+  const jsonFile = './data/dest_trips_exp.json';
+  const yearsToShow = [2018, 2020, 2022];
 
-  d3.json('./data/dest_trips_exp.json').then(json => {
-    // Once the data is loaded, you can access your nodes and links
-    const nodes = json.nodes;
-    const links = json.links;
+  d3.json(jsonFile).then(data => {
+    const nodes = data.nodes;
+    const links = data.links;
 
-    // Assuming each node has a 'year' property indicating its time of creation
-    nodes.forEach(node => {
-      node.radius = 0; // Start with a radius of 0
-    });
-
-    // Assuming each link has a 'year' property indicating its time of creation
+    const visitorMap = {};
     links.forEach(link => {
-      link.strength = 0; // Start with a strength of 0
+      if (!visitorMap[link.source]) {
+        visitorMap[link.source] = {};
+      }
+      visitorMap[link.source][link.target] = link.value;
     });
 
-    // Run the simulation in steps, increasing node size and link strength based on the year
-    const years = d3.extent(nodes, d => d.year); // Get the range of years
-    const yearScale = d3.scaleTime().domain(years).range([0, 1]); // Map years to a [0, 1] range
+    const topCountries2022 = nodes
+      .filter(d => d.year === 2022)
+      .sort((a, b) => d3.descending(visitorMap[a.id][a.id], visitorMap[b.id][b.id]))
+      .slice(0, 10)
+      .map(d => d.country);
 
-    function animateYear(year) {
-      nodes.forEach(node => {
-        if (node.year <= year) {
-          node.radius = Math.sqrt(node.Trips / 1000); // Set the radius based on Trips
-        }
-      });
+    const filteredNodes = nodes
+      .filter(d => topCountries2022.includes(d.country) && yearsToShow.includes(d.year))
+      .sort((a, b) => d3.descending(a.year, b.year) || d3.descending(visitorMap[a.id][a.id], visitorMap[b.id][b.id]));
 
-      links.forEach(link => {
-        if (link.year <= year) {
-          link.strength = Math.sqrt(link.value); // Set the strength based on value
-        }
-      });
+    const width = 800;
+    const height = 1000;
+    const svg = d3.select("#preferd-destionations")
+      .append("svg")
+      .attr("width", width).attr("height", height);
 
-      // Update the nodes and links in the simulation
-      node.attr('r', d => d.radius)
-          .attr('fill', 'blue'); // Update node attributes
-      link.attr('stroke-width', d => d.strength); // Update link attributes
+    
+    const radiusStep = Math.min(width, height) / (yearsToShow.length * 3);
 
-      simulation.nodes(nodes); // Update simulation nodes
-      simulation.force("link").links(links); // Update simulation links
-      simulation.alpha(1).restart(); // Restart the simulation with the new values
+    const yearScale = d3.scaleOrdinal()
+      .domain(yearsToShow)
+      .range([radiusStep, radiusStep * 2, radiusStep * 3]);
+
+    const sizeScale = d3.scaleSqrt()
+      .domain([0, d3.max(nodes, d => d3.max(Object.values(visitorMap[d.id])))])
+      .range([5, 40]);
+
+    const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+
+    const nodesByYear = {};
+    yearsToShow.forEach(year => {
+      nodesByYear[year] = filteredNodes.filter(d => d.year === year);
+    });
+
+    yearsToShow.forEach((year, i) => {
+      svg.append("circle")
+        .attr("cx", width / 2)
+        .attr("cy", height / 2)
+        .attr("r", yearScale(year))
+        .style("fill", "none")
+        .style("stroke", "lightgrey");
+
+      svg.append("text")
+        .attr("x", width / 2 + yearScale(year))
+        .attr("y", height / 2)
+        .attr("dy", "0.35em")
+        .attr("text-anchor", "middle")
+        .style("fill", "black")
+        .style("font-size", "10px")
+        .text(year);
+    });
+
+    // Function to calculate the angle for positioning nodes
+    function getAngle(d, nodesByYear) {
+      const index = nodesByYear[d.year].indexOf(d);
+      const totalNodes = nodesByYear[d.year].length;
+      return (index / totalNodes) * Math.PI * 2;
     }
 
-    // Call animateYear in a loop or with a timer to gradually update the visualization
-    d3.interval(() => {
-      let currentYear = years[0]; // Start at the first year
-      animateYear(currentYear);
-      // Increment currentYear as needed to animate through time
-    }, 1000); // The delay in milliseconds between steps
+    // Render the country nodes
+    const nodeCircles = svg.selectAll("circle.country-node")
+      .data(filteredNodes)
+      .enter().append("circle")
+      .attr("class", "country-node")
+      .attr("r", d => sizeScale(d3.max(Object.values(visitorMap[d.id]))))
+      .attr("fill", d => colorScale(d.country))
+      .attr("cx", d => width / 2 + Math.cos(getAngle(d, nodesByYear)) * yearScale(d.year))
+      .attr("cy", d => height / 2 + Math.sin(getAngle(d, nodesByYear)) * yearScale(d.year));
 
-  // Create SVG container
-  const svg = d3.select("#preferd-destionations").append('svg')
-    .attr('width', width)
-    .attr('height', height);
-
-  // Define the simulation
-  const simulation = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(links).id(d => d.id))
-    .force('charge', d3.forceManyBody().strength(-50))
-    .force('center', d3.forceCenter(width / 2, height / 2));
-
-  // Render the links
-  const link = svg.append('g')
-    .attr('class', 'links')
-    .selectAll('line')
-    .data(links)
-    .enter().append('line')
-    .attr('stroke-width', d => Math.sqrt(d.value)); // Width of line based on number of trips
-
-  // Define a color scale
-  const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
-
-  // Render the nodes
-  const node = svg.append('g')
-    .attr('class', 'nodes')
-    .selectAll('circle')
-    .data(nodes)
-    .enter().append('circle')
-    .attr('r', d => Math.sqrt(d.Trips / 10000000)) // Radius of node based on number of trips
-    .attr('fill', (d, i) => colorScale(i)) // Color of node based on index
-    .call(d3.drag() // Add drag capabilities
-      .on('start', dragstarted)
-      .on('drag', dragged)
-      .on('end', dragended));
-    
-  // Add labels to the nodes
-  node.append('title')
-    .text(d => d.id);
-
-  // Define drag event handlers
-  function dragstarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-  }
-
-  function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
-  }
-
-  function dragended(event, d) {
-    if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-  }
-
-  // Add tick function to update positions
-  simulation.on('tick', () => {
-    link
-      .attr('x1', d => d.source.x)
-      .attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x)
-      .attr('y2', d => d.target.y);
-
-    node
-      .attr('cx', d => d.x)
-      .attr('cy', d => d.y);
+    const labels = svg.selectAll("text.country-label")
+      .data(filteredNodes)
+      .enter().append("text")
+      .attr("class", "country-label")
+      .text(d => d.country)
+      .attr("fill", "white")
+      .attr("font-size", "10px")
+      .attr("text-anchor", "middle")
+      .attr("alignment-baseline", "middle")
+      .attr("x", d => width / 2 + Math.cos(getAngle(d, nodesByYear)) * yearScale(d.year))
+      .attr("y", d => height / 2 + Math.sin(getAngle(d, nodesByYear)) * yearScale(d.year));
   });
-}).catch(error => {
-  console.error('Error loading the JSON data:', error);
-});
 }
+
+
+
