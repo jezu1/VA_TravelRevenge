@@ -131,6 +131,18 @@ function createForceDirectedGraph() {
     const filteredNodes = nodes
       .filter(d => topCountries2022.includes(d.country) && yearsToShow.includes(d.year))
       .sort((a, b) => d3.descending(a.year, b.year) || d3.descending(visitorMap[a.id][a.id], visitorMap[b.id][b.id]));
+    
+    const top3Nodes = filteredNodes.slice(0, 3);
+
+      // Function to position the rank text relative to the node
+      function positionRank(d, index) {
+        // Calculate the position based on your node's position.
+        // This is an example; you may need to adjust the positioning.
+        return {
+          x: width / 2 + Math.cos(getAngle(d, nodesByYear)) * yearScale(d.year),
+          y: height / 2 + Math.sin(getAngle(d, nodesByYear)) * yearScale(d.year) - sizeScale(d3.max(Object.values(visitorMap[d.id]))) - 10
+        };
+      }
 
     const width = 800;
     const height = 1000;
@@ -138,6 +150,12 @@ function createForceDirectedGraph() {
       .append("svg")
       .attr("width", width).attr("height", height);
 
+    svg.append("image")
+      .attr("xlink:href", "/plane_image.jpg")  // Path to your globe image
+      .attr("width", 100)   // Set the width of the image
+      .attr("height", 100)  // Set the height of the image
+      .attr("x", width / 2 - 65)  // Centering the image (adjust the 25 based on your image size)
+      .attr("y", height / 2 - 65);
     // Setup the tooltip
     const tooltip = d3.select("body")
       .append("div")
@@ -148,24 +166,57 @@ function createForceDirectedGraph() {
       .style("border", "1px solid #000")
       .style("padding", "5px");
 
+
+    // // Define the arrow marker at the start
+    // const defs = svg.append('defs');
+    // defs.append('marker')
+    //   .attr('id', 'arrowhead')
+    //   .attr('viewBox', '-0 -5 10 10')
+    //   .attr('refX', 5)
+    //   .attr('refY', 0)
+    //   .attr('orient', 'auto')
+    //   .attr('markerWidth', 6)
+    //   .attr('markerHeight', 6)
+    //   .attr('xoverflow', 'visible')
+    //   .append('svg:path')
+    //   .attr('d', 'M 0,-5 L 10,0 L 0,5')
+    //   .attr('fill', '#000');
+
+
     const radiusStep = Math.min(width, height) / (yearsToShow.length * 3);
 
     const yearScale = d3.scaleOrdinal()
       .domain(yearsToShow)
-      .range([radiusStep, radiusStep * 2, radiusStep * 3]);
+      // .range([radiusStep, radiusStep * 2, radiusStep * 3]);
+      .range(yearsToShow.map((d, i) => radiusStep * (i + 1)));
+
 
     const sizeScale = d3.scaleSqrt()
+    
       .domain([0, d3.max(nodes, d => d3.max(Object.values(visitorMap[d.id])))])
       .range([5, 40]);
 
-    const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
+    const colorScale = d3.scaleOrdinal(d3.schemeTableau10); //multiple colors
+    /*
+    schemeAccent
+    schemeDark2
+    schemePaired
+    schemePastel1
+    schemePastel2
+    schemeTableau10
+    schemeSet3
+    */
+  
     const nodesByYear = {};
     yearsToShow.forEach(year => {
       nodesByYear[year] = filteredNodes.filter(d => d.year === year);
     });
 
-    yearsToShow.forEach((year, i) => {
+
+    // Draw year circles and labels
+    yearsToShow.forEach(year => {
+      // Circle for each year
       svg.append("circle")
         .attr("cx", width / 2)
         .attr("cy", height / 2)
@@ -173,16 +224,17 @@ function createForceDirectedGraph() {
         .style("fill", "none")
         .style("stroke", "lightgrey");
 
+      // Label for each year
       svg.append("text")
-        .attr("x", width / 2 + yearScale(year))
-        .attr("y", height / 2)
-        .attr("dy", "0.35em")
-        .attr("text-anchor", "middle")
-        .style("fill", "black")
+        .attr("x", width / 2 + yearScale(year) + 20)
+        .attr("y", height /2 + 50)
+        .attr("text-anchor", "start")
+        .style("fill", "lightgrey")
         .style("font-size", "10px")
         .text(year);
+  
     });
-
+  
     // Function to calculate the angle for positioning nodes
     function getAngle(d, nodesByYear) {
       const index = nodesByYear[d.year].indexOf(d);
@@ -244,13 +296,26 @@ function createForceDirectedGraph() {
       .on("click", handleClick);
 
     let focusedCountry = null;
+    //showing top 3 labels
+    top3Nodes.forEach((node, index) => {
+      const position = positionRank(node, index);
+      svg.append("text")
+        .attr("x", position.x)
+        .attr("y", position.y)
+        .text(index + 1)  // Displaying the rank
+        .attr("text-anchor", "middle")
+        .attr("alignment-baseline", "middle")
+        .style("fill", "lightgrey")
+        .style("font-size", "12px")
+        .style("font-weight", "bold");
+    });
 
     const labels = svg.selectAll("text.country-label")
       .data(filteredNodes)
       .enter().append("text")
       .attr("class", "country-label")
       .text(d => d.country)
-      .attr("fill", "white")
+      .attr("fill", "black")
       .attr("font-size", "10px")
       .attr("text-anchor", "middle")
       .attr("alignment-baseline", "middle")
