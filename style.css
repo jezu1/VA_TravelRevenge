@@ -148,3 +148,16 @@ fill: none;
 stroke-width: 5;
 stroke-dasharray: 15, 5;
 }
+
+.country-node.focused {
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.country-node.dimmed {
+  opacity: 0.1;
+}
+
+.label.dimmed {
+  opacity: 0.2;
+}

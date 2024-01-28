@@ -204,18 +204,46 @@ function createForceDirectedGraph() {
         .duration(500)
         .style("opacity", 0);
     };
+    // Add an event handler for the click
+    const handleClick = (event, d) => {
+      // Determine if we're already focused on this country
+      const isAlreadyFocused = d.country === focusedCountry;
+
+      // If we're already focused on this country, reset
+      if (isAlreadyFocused) {
+        resetFilter();
+      } else {
+        focusedCountry = d.country;
+        // Dim all countries
+        nodeCircles.classed('dimmed', true);
+        // Undim and focus all nodes of the same country
+        nodeCircles.filter(node => node.country === d.country)
+          .classed('dimmed', false)
+          .classed('focused', true);
+      }
+    };
+
+    // Function to reset the filter
+    const resetFilter = () => {
+      focusedCountry = null;
+      nodeCircles.classed('dimmed', false).classed('focused', false);
+      labels.classed('dimmed', false);
+    };
 
     // Render the country nodes
-  const nodeCircles = svg.selectAll("circle.country-node")
-  .data(filteredNodes)
-  .enter().append("circle")
-  .attr("class", "country-node")
-  .attr("r", d => sizeScale(d3.max(Object.values(visitorMap[d.id]))))
-  .attr("fill", d => colorScale(d.country))
-  .attr("cx", d => width / 2 + Math.cos(getAngle(d, nodesByYear)) * yearScale(d.year))
-  .attr("cy", d => height / 2 + Math.sin(getAngle(d, nodesByYear)) * yearScale(d.year))
-  .on("mouseover", handleMouseOver)
-  .on("mouseout", handleMouseOut);
+    const nodeCircles = svg.selectAll("circle.country-node")
+      .data(filteredNodes)
+      .enter().append("circle")
+      .attr("class", "country-node")
+      .attr("r", d => sizeScale(d3.max(Object.values(visitorMap[d.id]))))
+      .attr("fill", d => colorScale(d.country))
+      .attr("cx", d => width / 2 + Math.cos(getAngle(d, nodesByYear)) * yearScale(d.year))
+      .attr("cy", d => height / 2 + Math.sin(getAngle(d, nodesByYear)) * yearScale(d.year))
+      .on("mouseover", handleMouseOver)
+      .on("mouseout", handleMouseOut)
+      .on("click", handleClick);
+
+    let focusedCountry = null;
 
     const labels = svg.selectAll("text.country-label")
       .data(filteredNodes)
@@ -230,8 +258,12 @@ function createForceDirectedGraph() {
       .attr("y", d => height / 2 + Math.sin(getAngle(d, nodesByYear)) * yearScale(d.year))
       .on("mouseover", handleMouseOver)
       .on("mouseout", handleMouseOut);
-   });
+
+    svg.on('click', (event) => {
+      if (event.target === svg.node()) {
+        resetFilter();
+      }
+    });
+  });
 }
-
-
 
