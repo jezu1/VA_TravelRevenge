@@ -151,7 +151,7 @@ function createForceDirectedGraph() {
       .attr("width", width).attr("height", height);
 
     svg.append("image")
-      .attr("xlink:href", "/plane_image.jpg")  // Path to your globe image
+      .attr("xlink:href", "plane_image.jpg")  // Path to your globe image
       .attr("width", 100)   // Set the width of the image
       .attr("height", 100)  // Set the height of the image
       .attr("x", width / 2 - 65)  // Centering the image (adjust the 25 based on your image size)
