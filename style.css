@@ -53,6 +53,19 @@ footer {
   stroke-opacity: 1;
 }
 
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 8px;
+  font: 12px sans-serif;
+  background: white;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+
 .node {
   cursor: move;
   fill: #ccc;
