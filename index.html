@@ -1,56 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revenge Travel</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenge Travel</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
-  <div class="container">
+
+  <div class="main-div" id="main-header">
+    <div class="header-div" style="display: flex; align-items: center; justify-content: center;">
+      <img src="plane_image_transparent.png" alt="Plane Image" style="max-height: 90px;">
+      <h2 class="responsive-svg-container" style="text-align:center;display:inline-block; margin: 0;">
+        Travel Revenge?
+      </h2>
+      <img src="plane_image_transparent.png" alt="Plane Image" style="max-height: 90px;">
+    </div>
     <div class="text-section">
-      <div style="display: flex; align-items: center; justify-content: center;">
-        <img src="plane_image.jpg" alt="Plane Image" style="max-width: 70px;">
-        <h2 class="responsive-svg-container" style="text-align:center;display:inline-block; margin: 0;">
-          Travel Revenge?
-        </h2>
-        <img src="plane_image.jpg" alt="Plane Image" style="max-width: 70px;">
-      </div>
+      <br />
       <h3 class="responsive-svg-container" style="text-align:center">
-        How has the Covid-19 pandemic affected travelling in Europe.
+        "How has the Covid-19 pandemic affected travelling in Europe"
       </h3>
-      <p>
-        <!-- <img src="footer.jpg" alt="Footer Image" style="max-width: 100%; height: auto;"> -->
+      <img src="footer.jpg" alt="Footer Image" style="max-width: 100%; height: auto; width: 80%; margin-right: 10%;">
+      <p style="color: gray;">
         Revenge travel is a term that emerged in response to the COVID-19 pandemic. 
         It refers to the phenomenon where people, after being restricted from travel due to lockdowns and safety concerns, 
         enthusiastically and impulsively embark on trips to make up for lost time. This concept is related to the desire to 
         "get back" at the pandemic for limiting our freedom and to make the most of newfound travel opportunities.
-        In the graph below it is visualized the amount of money (EUR) spent by European citizens in travelling abroad.
-        The data is collected from Eurostat and it is available for the period 2019-2022.
+        The data is collected from Eurostat and we are focused on the period from 2018-2022.
       </p>
+      <br />
+      <h3 class="responsive-svg-container" style="text-align:center">
+        Let's start by understanding what happened during the pandemic
+      </h3>
+
+    </div>
+
+    <div id="covid-timeline" class="responsive-svg-container" style="text-align:center"></div>
+
+  </div>
+
+  <div class="main-div" >
+    <div>
+      <label for="countryDropdown" style="font-size: 25px;"><b>Your location:&nbsp;</b></label>
+      <select id="countryDropdown" style="font-size: 25px; margin-right: 5%;"></select>
     </div>
   </div>
-
-  <div id="covid-timeline" class="responsive-svg-container" style="text-align:center"></div>
-
-  <div id="preferd-destionations" class="responsive-svg-container" style="text-align:center"></div>
   
-  <div id="tooltip" class="tooltip" style="opacity: 0; position: absolute;"></div>
-  <!-- <strong>Country: </strong><span id="Country"></span><br>
-    <strong>Visitors: </strong><span id="Visitors"></span> -->
+  <div class="main-div" style="text-align: center; display: flex; justify-content: center; align-items: center; margin-right: 20px;padding-left: 0;display: grid; place-items: center;">
+    <h3 class="responsive-svg-container" style="text-align:center;">
+      How did different age-groups spend on trips during pre/post pandemic?
+    </h3>
+    <p style="max-width: 50%; height: auto; color: grey;">
+      This chart illustrates the comparison of average expenses incurred per night on trips from the four age groups. 
+      The period compared is 2018 (pre-pandemic), 2020 (pandemic), 2022 (post-pandemic).
+    </p>
+    <div id="chartContainer" class="scatter-plot" style="clear: both;">
+      <div id="scatterPlot" ></div>
+    </div>
+    <!-- Legend -->
+    <div id="legend" class="legend" style="text-align: center;"></div>
   </div>
-  
 
-  <footer class="responsive-svg-container" style="text-align:center">
-    <img src="footer.jpg" alt="Footer Image" style="max-width: 100%; height: auto; width: 30%;">
-    <p style="font-size: small; margin-bottom: 20px;">Created by: Ahmad & Jezuela Gega - The Turtles <br>
+  <div class="main-div">
+    <h3 class="responsive-svg-container" style="text-align:center; max-width: 70%;">
+      So where is everyone going? Did that change over the pandemic period?
+    </h3>
+    <p style="color: grey; margin-left: 20%; margin-right: 18%;">
+      This chart shows the top 10 destinations across the three important periods 2018 (pre-pandemic), 2020 (pandemic), 2022 (post-pandemic).
+      The comparison is shown as layers for each period. You can also click on a country to highlight all three periods for it to compare its ranking.
+    </p>
+    <div id="preferd-destionations" class="responsive-svg-container" style="text-align:center"></div>
+    <div id="tooltip" class="tooltip" style="opacity: 0; position: absolute;"></div>
+  </div>
+
+  <div class="main-div">
+    <h3 class="responsive-svg-container" style="text-align:center;">
+      Do hot destinations mean low expenses as well?
+    </h3>
+    <p style="color: grey;">
+      This chart compares the average expenses per night for the 10 hottest destinations. 
+      The period compared is 2018 (pre-pandemic), 2020 (pandemic), 2022 (post-pandemic).
+    </p>
+    <div id="sankeyChart"></div>
+  </div>
+
+  <div class="main-div">
+    <h3 class="responsive-svg-container" style="text-align:center;">
+      Now hold on...what is contributing more to the expenses...and did it change?
+    </h3>
+    <p style="color: grey; margin-left: 20%; margin-right: 20%;">
+      This small multiples chart compares the average expenses per night for the 10 hottest destinations across three main categories 
+      (Transport, Accomodation, Restaurants). The period compared is 2018 (pre-pandemic), 2020 (pandemic), 2022 (post-pandemic).
+      By default, expenses are only highlighted for the top 3 destinations (for easy reading), but you can toggle the opacity by clicking on the legend items or lines.
+    </p>
+    <div id="smallMultiples"></div>
+  </div>
+
+  <div class="main-div">
+    <h3 class="responsive-svg-container" style="text-align:center; max-width: 70%;">
+      Alright...you now have an idea of a potential vacay destination, but when should you go there?
+    </h3>
+    <p style="color: grey; margin-left: 20%; margin-right: 20%;">
+      This chart illustrates a time-series by month for the number of arrivals to the destination of your choice. 
+      It also compares the period of 2018 (pre-pandemic), 2020 (pandemic), 2022 (post-pandemic). Choose your destination.
+    </p>
+    <!-- Label for the dropdown -->
+    <label for="destinationDropdown">Destination: </label>
+    
+    <!-- Dropdown filter positioned above the chart -->
+    <select id="destinationDropdown"></select>
+    
+    <div id="chart"></div>
+  </div>
+
+  <div class="main-div">
+    <!-- <img src="footer.jpg" alt="Footer Image" style="max-width: 100%; height: auto; width: 30%;"> -->
+    <p style="font-size: 15px; margin-bottom: 20px;">Created by: Ahmad Ahmad & Jezuela Gega - The Turtles <br>
       Source of the data: Eurostat -
       <a href="https://ec.europa.eu/eurostat/databrowser/view/tin00188__custom_8820978/default/table?lang=en">see here</a>
     </p>
-    <br />
-  </footer>
-  <!-- <script src="./script.js"></script> -->
-  <script src="./script.js"></script>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
+
