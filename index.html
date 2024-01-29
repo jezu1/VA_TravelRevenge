@@ -69,11 +69,15 @@
     <h3 class="responsive-svg-container" style="text-align:center; max-width: 70%;">
       So where is everyone going? Did that change over the pandemic period?
     </h3>
-    <p style="color: grey; margin-left: 20%; margin-right: 18%;">
+    <p style="color: grey; margin-left: 20%; margin-right: 14%;">
       This chart shows the top 10 destinations across the three important periods 2018 (pre-pandemic), 2020 (pandemic), 2022 (post-pandemic).
-      The comparison is shown as layers for each period. You can also click on a country to highlight all three periods for it to compare its ranking.
+      The comparison is shown as layers for each period. Note that domestic trips are excluded in this chart since it ends up inflating the scale due to high numbers.
     </p>
-    <div id="preferd-destionations" class="responsive-svg-container" style="text-align:center"></div>
+    <div>
+      <label for="countryDropdown2">Origin Country:</label>
+      <select id="countryDropdown2"></select>
+    </div>
+    <div id="top-destinations" class="responsive-svg-container" style="text-align:center"></div>
     <div id="tooltip" class="tooltip" style="opacity: 0; position: absolute;"></div>
   </div>
 
@@ -94,7 +98,7 @@
     </h3>
     <p style="color: grey; margin-left: 20%; margin-right: 20%;">
       This small multiples chart compares the average expenses per night for the 10 hottest destinations across three main categories 
-      (Transport, Accomodation, Restaurants). The period compared is 2018 (pre-pandemic), 2020 (pandemic), 2022 (post-pandemic).
+      (Transport, Accomodation, Restaurants). The period compared is 2018-2022.
       By default, expenses are only highlighted for the top 3 destinations (for easy reading), but you can toggle the opacity by clicking on the legend items or lines.
     </p>
     <div id="smallMultiples"></div>
