@@ -1,7 +1,14 @@
-# VA_TravelRevenge
+# Visual Analytics: Travel Revenge
 
 "How has the Covid-19 pandemic affected travelling in Europe"
 Revenge travel is a term that emerged in response to the COVID-19 pandemic. It refers to the phenomenon where people, after being restricted from travel due to lockdowns and safety concerns, enthusiastically and impulsively embark on trips to make up for lost time. This concept is related to the desire to "get back" at the pandemic for limiting our freedom and to make the most of newfound travel opportunities. The data is collected from Eurostat and we are focused on the period from 2018-2022.
+_______
+
+The purpose of this repo is to visualize the research questions:
+* How did different age-groups spend on trips during pre/post pandemic?
+* Did the favorite destinations change after the pandemic period?
+* Do favorite destinations mean low expenses as well?
+* What is contributing more to the expenses between transport, accommodation and restaurants and did it change before and after covid?
 _______________
 This repo includes **index**, **css** and **javasscript** used to publish the **Travel Revenge website** .
 
